@@ -1,0 +1,165 @@
+:root {
+    --primary-color: rgb(45, 95, 115);
+    --lightGrey-color: #d2d6dd;
+    --darkGrey-color: #84868b;
+    --grid-maxWidth: 120rem;
+    --grid-gutter: 2rem;
+    --font-family: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: "Segoe UI", "Helvetica Neue", san-serif; /*fallback*/
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    margin: 0.35em 0 0.7em 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 0.85em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover:not(.button) {
+    opacity: 0.6;
+}
+
+p {
+    margin-top: 0;
+}
+
+blockquote {
+    background-color: #f3f3f3;
+    padding: 1.5rem 2rem;
+    border-left: 3px solid var(--lightGrey-color);
+}
+
+dl dt {
+    font-weight: bold;
+}
+
+hr {
+    border: none;
+    background-color: var(--lightGrey-color);
+    height: 1px;
+    margin: 1rem 0;
+}
+
+table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: left;
+}
+
+td,
+th {
+    vertical-align: middle;
+    padding: 1.2rem 0.4rem;
+}
+
+thead {
+    border-bottom: 2px solid var(--lightGrey-color);
+}
+
+tfoot {
+    border-top: 2px solid var(--lightGrey-color);
+}
+
+code,
+kbd,
+pre,
+samp,
+tt {
+    font-family: monaco, "Consolas", "Lucida Console", monospace;
+}
+
+code,
+kbd {
+    padding: 0 0.4rem;
+    font-size: 90%;
+    white-space: pre-wrap;
+    border-radius: 4px;
+    color: #c62424;
+    padding: 0.2em 0.4em;
+    background-color: #f7f7f7;
+}
+
+pre {
+    background-color: #f7f7f7;
+    font-size: 1em;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted;
+}
+
+img {
+    max-width: 100%;
+}
+
+fieldset {
+    border: 1px solid var(--lightGrey-color); 
+}
+
+iframe {
+    border: 0;
+}

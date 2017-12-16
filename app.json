@@ -1,0 +1,6 @@
+{
+  "name": "Chain lyrics",
+  "description": "first heroku",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
