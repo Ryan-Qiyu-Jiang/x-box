@@ -8,6 +8,7 @@
         margin-bottom: 0;
         overflow: hidden;
 }
+
 @keyframes showLater {
     to{
     padding:10px 20px;
@@ -24,25 +25,95 @@
     height:auto;
     }
 }
-.typing-indicator {
-  background-color: #E6E7ED;
-  will-change: transform;
-  width: auto;
-  border-radius: 50px;
-  padding: 20px;
+.wrapper-hide{
+    padding:0;
+    margin:0;
+    height:0;
+    overflow: hidden;
+}
+
+.hideMe {
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    padding:0;
+    margin:0;
+    height:0;
+    overflow: hidden;
+}
+
+@keyframes hideLater {
+    0%{
+    height:0;
+    overflow: hidden;
+    }
+    50%{
+    height:0;
+    overflow: hidden;
+    }
+    50.01%{
+    overflow: visible;
+    height:auto;
+    }
+    99.99%{
+    overflow: visible;
+    height:auto;
+    }
+    100%{
+    height:0;
+    overflow: hidden;
+    }
+}
+@-webkit-keyframes hideLater {
+    0%{
+    padding:0;
+    margin:0;
+    height:0;
+    overflow: hidden;
+    }
+    50%{
+    padding:0;
+    margin:0;
+    height:0;
+    overflow: hidden;
+    }
+    50.01%{
+    padding:10px 20px;
+    margin:0 10px 20px 10px;
+    overflow: visible;
+    height:auto;
+    }
+    99.8%{
+    padding:10px 20px;
+    margin:0 10px 20px 10px;
+    overflow: visible;
+    height:auto;
+    }
+    99.9%{
+    padding:0;
+    margin:0;
+    height:0;
+    overflow: hidden;
+    }
+    100%{
+    padding:0;
+    margin:0;
+    height:0;
+    overflow: hidden;
+    }
+}
+.typing-indicator{
+  padding:15px;
   display: table;
-  margin: 0 auto;
-  position: relative;
 }
 .typing-indicator span {
-  height: 15px;
-  width: 15px;
+  height: 6px;
+  width: 6px;
   float: left;
-  margin: 0 1px;
-  background-color: black;
+  margin: 0 2px;
+  background-color: #ffffff;
   display: block;
   border-radius: 50%;
-  opacity: 0.4;
+  opacity: 0.8;
 }
 .typing-indicator span:nth-of-type(1) {
   -webkit-animation: 1s blink infinite 0.3333s;
@@ -58,31 +129,27 @@
 }
 
 @-webkit-keyframes blink {
-  0% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
-  }
   50% {
-    -webkit-transform: translate(0px, -4px);
-            transform: translate(0px, -4px);
-  }
-  100% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
+    -webkit-transform: translate(0, -5px);
+            transform: translate(0, -5px);
   }
 }
 
 @keyframes blink {
-  0% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
-  }
   50% {
-    -webkit-transform: translate(0px, -4px);
-            transform: translate(0px, -4px);
+    -webkit-transform: translate(0, -5px);
+            transform: translate(0, -5px);
   }
-  100% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
+}
+@-webkit-keyframes bulge {
+  50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+@keyframes bulge {
+  50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
   }
 }

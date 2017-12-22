@@ -1,6 +1,11 @@
 import React from "react";
 
 export default class Box extends React.Component{
+
+handleClick(){
+    this.props.setClicked(this.props.value.id);
+}
+
 render(){
     const traits = this.props.value;
     let color;
@@ -23,17 +28,42 @@ render(){
     }
 
 
-    const styles = {
+    const boxStyles = {
         left: traits.xcord + "px",
         top: traits.ycord + "px",
         width: traits.width + "px",
         height: traits.height + "px",
         'backgroundColor': color,
         color: (traits.id=="y")? 'black':'white',
-        display: (traits.id!=="table")? 'flex':'none'
+        display: (traits.id!=="table")? 'flex':'none',
     };
+
+    const alertWrapStyles = {
+        left: traits.xcord + traits.width/2 - 110 + "px",
+        top: traits.ycord - 50 + "px",
+        position:'absolute'
+    };
+
+    const alertStyles ={
+        animation: (traits.clicked) ? 'alert-cycle 2s ease-in-out 0s forwards' : 'none'
+    }
+
+    const alertInnerStyles = {
+        backgroundColor: color,
+        color: (traits.id == "y")? 'black':'white'
+    }
+
    return(
-    <div style={styles} class="box unselectable">{traits.id}</div>
+    <div onClick={this.handleClick.bind(this)}>
+    <div style={alertWrapStyles}>
+        <div class="alert-wrapper" style={alertStyles}>
+            <div class="alert-small" style={alertInnerStyles}>
+                <span>Drag-able in progress! :D</span> 
+            </div>
+        </div>
+    </div>
+    <div style={boxStyles} class="box unselectable">{traits.id}</div>
+    </div>
     );
 }
 

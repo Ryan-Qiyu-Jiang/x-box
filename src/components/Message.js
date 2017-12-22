@@ -16,25 +16,43 @@ render(){
     //             messageStyleClass = (self.props.messageClass.sender=='user')? 'user-message' : 'my-message';
     //         }, 1000*self.props.messageClass.delay);
     //console.log(this.props.messageClass.delay);
-    const delay=2*Math.random();
-            const styles={
-    "-moz-animation": "showLater 0s ease-in " + 1 +"s forwards",
+    const delay=2*Math.random()+2;
+    const showLaterstyles={
+    "MozAnimation": "showLater 0s ease-in " + delay +"s forwards",
     /* Firefox */
-    "-webkit-animation": "showLater 0s ease-in " +1+ "s forwards",
+    "WebkitAnimation": "showLater 0s ease-in " + delay + "s forwards",
     /* Safari and Chrome */
-    "-o-animation": "showLater 0s ease-in " +1+"s forwards",
+    "OAnimation": "showLater 0s ease-in " + delay +"s forwards",
     /* Opera */
-    "animation": "showLater 0s ease-in " +1+ "s forwards"
+    "animation": "showLater 0s ease-in " + delay + "s forwards"
+            };
+    const hideLaterstyles=(this.props.messageClass.sender=='user')? {}:{
+    "MozAnimation": "hideLater "+ delay +"s ease-in 0s forwards",
+    /* Firefox */
+    "WebkitAnimation": "hideLater "+ delay +"s ease-in 0s forwards",
+    /* Safari and Chrome */
+    "OAnimation": "hideLater "+ delay +"s ease-in 0s forwards",
+    /* Opera */
+    "animation": "hideLater "+ delay +"s ease-in 0s forwards"
             };
 
-              const messageStyleClass = (this.props.messageClass.sender=='user')? 'user-message' : 'my-message showMe';
+
+    const messageStyleClass = (this.props.messageClass.sender=='user')? 'user-message' : 'my-message showMe';
+    const indicatorStyleClass = (this.props.messageClass.sender=='user')? 'wrapper-hide' : 'hideMe';
   //  let messageStyleClass = (this.props.messageClass.sender=='user')? 'user-message' : 'my-message';
 
    return(
    	<div class="col-12 message-wrapper">
-    <div class={"message "+messageStyleClass} style={styles} >
-        {this.props.messageClass.text}
-    </div>
+        <div class={indicatorStyleClass} style={hideLaterstyles}>
+            <div class="message my-message typing-indicator">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+        </div>
+        <div class={"message "+messageStyleClass} style={showLaterstyles} >
+            {this.props.messageClass.text}
+        </div>
     </div>
     );
 }
